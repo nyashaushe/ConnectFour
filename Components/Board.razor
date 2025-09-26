@@ -4,15 +4,9 @@
 <HeadContent>
    <style>
       :root {
-         --board-bg:
-            @ColorTranslator.ToHtml(BoardColor)
-         ;
-         --player1:
-            @ColorTranslator.ToHtml(Player1Color)
-         ;
-         --player2:
-            @ColorTranslator.ToHtml(Player2Color)
-         ;
+         --board-bg: @ColorTranslator.ToHtml(BoardColor);
+         --player1: @ColorTranslator.ToHtml(Player1Color);
+         --player2: @ColorTranslator.ToHtml(Player2Color);
       }
    </style>
 </HeadContent>
@@ -32,19 +26,25 @@
    <span class="alert-info">@CurrentTurn</span>
 </article>
 
-<div>
-   <div class="board">
+<div class="game-container">
+   <div class="game-board">
+      <div class="board">
+         @for (var i = 0; i < 42; i++)
+         {
+            <span class="container">
+               <span></span>
+            </span>
+         }
+      </div>
       @for (var i = 0; i < 42; i++)
       {
-         <span class="container">
-            <span></span>
-         </span>
+         <span class="@pieces[i]"></span>
       }
    </div>
-   @for (var i = 0; i < 42; i++)
-   {
-      <span class="@pieces[i]"></span>
-   }
+   
+   <div class="game-info">
+      <MoveHistory />
+   </div>
 </div>
 
 @code {

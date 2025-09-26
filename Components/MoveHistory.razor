@@ -1,0 +1,57 @@
+@inject GameState State
+
+<div class="move-history" role="complementary" aria-label="Move History">
+    <h2>Move History</h2>
+    @if (State.MoveHistory.Any())
+    {
+        <ul aria-label="List of moves">
+            @foreach (var move in State.MoveHistory)
+            {
+                <li>@move.Description</li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No moves yet</p>
+    }
+</div>
+
+<style>
+    .move-history {
+        margin: 1rem;
+        padding: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        max-height: 300px;
+        overflow-y: auto;
+        background-color: #f8f9fa;
+    }
+
+    .move-history h2 {
+        margin-top: 0;
+        font-size: 1.2rem;
+        color: #333;
+    }
+
+    .move-history ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .move-history li {
+        padding: 0.5rem;
+        border-bottom: 1px solid #eee;
+        font-size: 0.9rem;
+    }
+
+    .move-history li:last-child {
+        border-bottom: none;
+    }
+
+    .move-history p {
+        color: #666;
+        font-style: italic;
+    }
+</style>

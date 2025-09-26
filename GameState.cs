@@ -173,11 +173,20 @@ public class GameState
 
         TheBoard[landingSpot] = PlayerTurn;
 
-        return ConvertLandingSpotToRow(landingSpot);
+        var row = ConvertLandingSpotToRow(landingSpot);
+        MoveHistory.Add(new Move
+        {
+            Player = PlayerTurn,
+            Column = column,
+            Row = row - 1,
+            TurnNumber = CurrentTurn
+        });
 
+        return row;
     }
 
     public List<int> TheBoard { get; private set; } = new List<int>(new int[42]);
+    public List<Move> MoveHistory { get; private set; } = new List<Move>();
 
     public void ResetBoard()
     {
