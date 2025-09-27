@@ -363,3 +363,40 @@ main[b-dzoor4i9v5] {
         opacity: 0;
     }
 }
+/* /Components/MoveHistory.razor.rz.scp.css */
+.move-history[b-3vx2cd18zr] {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin: 1rem;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.move-history h3[b-3vx2cd18zr] {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.move-history ul[b-3vx2cd18zr] {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.move-history li[b-3vx2cd18zr] {
+    padding: 0.5rem;
+    border-bottom: 1px solid #dee2e6;
+    font-size: 0.9rem;
+}
+
+.move-history li:last-child[b-3vx2cd18zr] {
+    border-bottom: none;
+}
+
+.move-history p[b-3vx2cd18zr] {
+    color: #666;
+    font-style: italic;
+}

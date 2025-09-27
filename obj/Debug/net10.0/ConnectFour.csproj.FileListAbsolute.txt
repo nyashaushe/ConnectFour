@@ -153,8 +153,6 @@ C:\BYU TERM 5\.NET\ConnectFour\obj\Debug\net10.0\compressed\127ln78bqb-{0}-0j3bg
 C:\BYU TERM 5\.NET\ConnectFour\obj\Debug\net10.0\compressed\6c2w37mbjq-{0}-13ja33weya-13ja33weya.gz
 C:\BYU TERM 5\.NET\ConnectFour\obj\Debug\net10.0\compressed\38grwflvg6-{0}-cyt5sts332-cyt5sts332.gz
 C:\BYU TERM 5\.NET\ConnectFour\obj\Debug\net10.0\compressed\fecu9w6d36-{0}-wos4yuj1st-wos4yuj1st.gz
-C:\BYU TERM 5\.NET\ConnectFour\obj\Debug\net10.0\compressed\8t7ubqbmk6-{0}-4iss80ddjp-4iss80ddjp.gz
-C:\BYU TERM 5\.NET\ConnectFour\obj\Debug\net10.0\compressed\qps0edvuu1-{0}-4iss80ddjp-4iss80ddjp.gz
 C:\BYU TERM 5\.NET\ConnectFour\obj\Debug\net10.0\staticwebassets.build.json
 C:\BYU TERM 5\.NET\ConnectFour\obj\Debug\net10.0\staticwebassets.build.json.cache
 C:\BYU TERM 5\.NET\ConnectFour\obj\Debug\net10.0\staticwebassets.development.json
@@ -165,3 +163,6 @@ C:\BYU TERM 5\.NET\ConnectFour\obj\Debug\net10.0\ConnectFour.pdb
 C:\BYU TERM 5\.NET\ConnectFour\obj\Debug\net10.0\ConnectFour.genruntimeconfig.cache
 C:\BYU TERM 5\.NET\ConnectFour\obj\Debug\net10.0\ref\ConnectFour.dll
 C:\BYU TERM 5\.NET\ConnectFour\obj\Debug\net10.0\ConnectFour.sourcelink.json
+C:\BYU TERM 5\.NET\ConnectFour\obj\Debug\net10.0\scopedcss\Components\MoveHistory.razor.rz.scp.css
+C:\BYU TERM 5\.NET\ConnectFour\obj\Debug\net10.0\compressed\8t7ubqbmk6-{0}-9q9h0v3s9h-9q9h0v3s9h.gz
+C:\BYU TERM 5\.NET\ConnectFour\obj\Debug\net10.0\compressed\qps0edvuu1-{0}-9q9h0v3s9h-9q9h0v3s9h.gz

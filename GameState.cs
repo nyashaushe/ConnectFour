@@ -29,6 +29,26 @@ public class GameState
     /// </summary>
     public int CurrentTurn { get { return TheBoard.Count(x => x != 0); } }
 
+    /// <summary>
+    /// Time limit for each player's turn in seconds
+    /// </summary>
+    public int TurnTimeLimit { get; set; } = 30;
+
+    /// <summary>
+    /// Remaining time for the current player's turn in seconds
+    /// </summary>
+    public int CurrentPlayerTimeRemaining { get; set; }
+
+    /// <summary>
+    /// Whether the game is over
+    /// </summary>
+    public bool GameOver { get; private set; }
+
+    /// <summary>
+    /// The index of the current player (0 or 1)
+    /// </summary>
+    public int CurrentPlayerIndex { get; set; }
+
     public static readonly List<int[]> WinningPlaces = new();
 
     public static void CalculateWinningPlaces()

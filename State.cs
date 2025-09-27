@@ -4,6 +4,9 @@ public class State
     public int GameRoundsPlayed { get; set; }
     public bool GameOver { get; set; }
     public Piece[] Pieces { get; set; }
+    public int TurnTimeLimit { get; set; } = 30; // Time limit in seconds for each turn
+    public int CurrentPlayerTimeRemaining { get; set; }
+    public int CurrentPlayerIndex { get; set; }
     public int BoardRows { get; } = 6;
     public int BoardCols { get; } = 7;
 
@@ -16,6 +19,8 @@ public class State
         };
         GameRoundsPlayed = 0;
         GameOver = false;
+        CurrentPlayerIndex = 0;
+        CurrentPlayerTimeRemaining = TurnTimeLimit;
         Pieces = new Piece[BoardRows * BoardCols];
         for (int i = 0; i < Pieces.Length; i++)
         {
@@ -28,6 +33,8 @@ public class State
         GameOver = false;
         Players[0].Points = 0;
         Players[1].Points = 0;
+        CurrentPlayerIndex = 0;
+        CurrentPlayerTimeRemaining = TurnTimeLimit;
         for (int i = 0; i < Pieces.Length; i++)
         {
             Pieces[i] = new Piece();

@@ -4,9 +4,15 @@
 <HeadContent>
    <style>
       :root {
-         --board-bg: @ColorTranslator.ToHtml(BoardColor);
-         --player1: @ColorTranslator.ToHtml(Player1Color);
-         --player2: @ColorTranslator.ToHtml(Player2Color);
+         --board-bg:
+            @ColorTranslator.ToHtml(BoardColor)
+         ;
+         --player1:
+            @ColorTranslator.ToHtml(Player1Color)
+         ;
+         --player2:
+            @ColorTranslator.ToHtml(Player2Color)
+         ;
       }
    </style>
 </HeadContent>
@@ -41,13 +47,18 @@
          <span class="@pieces[i]"></span>
       }
    </div>
-   
+
    <div class="game-info">
+      <div class="timer-info">
+         <span class="timer">Time Remaining: @State.CurrentPlayerTimeRemaining seconds</span>
+      </div>
       <MoveHistory />
    </div>
 </div>
 
 @code {
+   private System.Timers.Timer? _timer;
+
    [Parameter]
    public Color BoardColor { get; set; } = ColorTranslator.FromHtml("yellow");
 
@@ -67,6 +78,31 @@
    protected override void OnInitialized()
    {
       State.ResetBoard();
+      StartTimer();
+   }
+
+   private void StartTimer()
+   {
+      _timer?.Dispose();
+      _timer = new System.Timers.Timer(1000); // 1 second interval
+      _timer.Elapsed += TimerElapsed;
+      _timer.AutoReset = true;
+      _timer.Start();
+   }
+
+   private void TimerElapsed(object? sender, System.Timers.ElapsedEventArgs e)
+   {
+      if (!State.GameOver)
+      {
+         State.CurrentPlayerTimeRemaining--;
+         if (State.CurrentPlayerTimeRemaining <= 0)
+         {
+            // Time's up! Switch to the next player
+            State.CurrentPlayerIndex = (State.CurrentPlayerIndex + 1) % 2;
+            State.CurrentPlayerTimeRemaining = State.TurnTimeLimit;
+         }
+         InvokeAsync(StateHasChanged);
+      }
    }
 
    private void PlayPiece(byte col)
@@ -78,6 +114,7 @@
          var turn = State.CurrentTurn;
          var landingRow = State.PlayPiece(col);
          pieces[turn] = $"player{player} col{col} drop{landingRow}";
+         State.CurrentPlayerTimeRemaining = State.TurnTimeLimit; // Reset timer for next player
       }
       catch (ArgumentException ex)
       {
